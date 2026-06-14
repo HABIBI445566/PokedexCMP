@@ -2,7 +2,7 @@ name: iOS Build
 
 on:
   push:
-    branches: [ master  ]
+    branches: [ master ]
 
 jobs:
   build-ios:
@@ -20,6 +20,9 @@ jobs:
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
       - name: Build iOS
         run: |
