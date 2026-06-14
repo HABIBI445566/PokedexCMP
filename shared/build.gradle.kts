@@ -1,15 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-
-configurations.all {
-    resolutionStrategy {
-        force("androidx.savedstate:savedstate:1.3.0-alpha01")
-        force("androidx.core:core-bundle:1.1.0-alpha01")
-    }
-}
-
-
-
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidMultiplatformLibrary)
@@ -72,7 +62,7 @@ kotlin {
             implementation("io.coil-kt.coil3:coil-network-ktor3:3.0.4")
             implementation("org.jetbrains.compose.material:material-icons-extended:1.7.0")
             implementation("org.jetbrains.androidx.navigation:navigation-compose:2.8.0-alpha10")
-            implementation("androidx.savedstate:savedstate:1.2.1")}
+            }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
