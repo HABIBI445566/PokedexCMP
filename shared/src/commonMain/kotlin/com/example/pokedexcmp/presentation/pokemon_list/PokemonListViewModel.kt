@@ -43,6 +43,7 @@ class PokemonListViewModel(
                     _state.value = _state.value.copy(isLoading = false, pokemonList = list)
                 }
                 .onFailure { error ->
+                    error.printStackTrace()
                     _state.value = _state.value.copy(isLoading = false, error = error.message)
                     _effect.send(PokemonListEffect.ShowError(error.message ?: "Something went wrong"))
                 }

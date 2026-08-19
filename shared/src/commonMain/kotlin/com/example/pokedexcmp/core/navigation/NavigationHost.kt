@@ -9,7 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.pokedexcmp.presentation.pokemon_detail.PokemonDetailScreen
 import com.example.pokedexcmp.presentation.pokemon_list.PokemonListScreen
-
+import androidx.savedstate.read
 @Composable
 fun NavigationHost(navigationDispatcher: NavigationDispatcher) {
     val navController = rememberNavController()
@@ -36,7 +36,7 @@ fun NavigationHost(navigationDispatcher: NavigationDispatcher) {
             route = "${AppRoutes.POKEMON_DETAIL}/{name}",
             arguments = listOf(navArgument("name") { type = NavType.StringType })
         ) { backStackEntry ->
-            val name = backStackEntry.arguments?.getString("name") ?: return@composable
+            val name = backStackEntry.arguments?.read { getStringOrNull("name") } ?: return@composable
             PokemonDetailScreen(pokemonName = name)
         }
     }

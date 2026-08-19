@@ -7,6 +7,7 @@ import com.example.pokedexcmp.core.di.appModule
 import org.koin.core.context.startKoin
 
 fun main() = application {
+    println("Running on JVM: " + System.getProperty("java.home"))
     startKoin {
         modules(appModule)
     }

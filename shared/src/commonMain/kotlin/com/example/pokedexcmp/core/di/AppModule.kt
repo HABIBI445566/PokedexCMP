@@ -1,7 +1,7 @@
 package com.example.pokedexcmp.core.di
 
 import com.example.pokedexcmp.data.remote.api.PokeApiService
-import com.example.pokedexcmp.data.remote.api.createHttpClient
+import com.example.pokedexcmp.data.api.createHttpClient
 import com.example.pokedexcmp.data.repository.PokemonRepositoryImpl
 import com.example.pokedexcmp.domain.repository.PokemonRepository
 import com.example.pokedexcmp.domain.usecase.GetPokemonDetailUseCase

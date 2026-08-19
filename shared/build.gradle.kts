@@ -37,11 +37,17 @@ kotlin {
            isIncludeAndroidResources = true
        }
     }
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation("io.ktor:ktor-client-okhttp:3.0.0")
+        }
+        jvmMain.dependencies {
+            implementation("io.ktor:ktor-client-okhttp:3.0.0")
+        }
+        iosMain.dependencies {
+            implementation("io.ktor:ktor-client-darwin:3.0.0")
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -61,8 +67,9 @@ kotlin {
             implementation("io.coil-kt.coil3:coil-compose:3.0.4")
             implementation("io.coil-kt.coil3:coil-network-ktor3:3.0.4")
             implementation("org.jetbrains.compose.material:material-icons-extended:1.7.0")
-            implementation("org.jetbrains.androidx.navigation:navigation-compose:2.8.0-alpha10")
-            }
+            implementation("org.jetbrains.androidx.navigation:navigation-compose:2.9.2")
+            implementation("io.ktor:ktor-client-logging:3.0.0")
+        }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
