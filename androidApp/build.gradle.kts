@@ -13,8 +13,9 @@ kotlin {
 }
 dependencies {
     implementation(projects.shared)
-    implementation("io.insert-koin:koin-android:4.0.0")
-    implementation("io.insert-koin:koin-androidx-compose:4.0.0")
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
     implementation(libs.androidx.activity.compose)
     implementation("io.ktor:ktor-client-okhttp:3.0.0")
     implementation(libs.compose.uiToolingPreview)

@@ -11,7 +11,8 @@ dependencies {
     implementation("io.ktor:ktor-client-okhttp:3.0.0")
     implementation(compose.desktop.currentOs)
     implementation(libs.kotlinx.coroutinesSwing)
-    implementation("io.insert-koin:koin-compose:4.0.0")
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.compose)
     implementation(libs.compose.uiToolingPreview)
 }
 
